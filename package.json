@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "private": "true",
+  "type": "module",
   "scripts": {
     "cz": "git cz",
     "preinstall": "npx only-allow pnpm",

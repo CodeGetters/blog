@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 自己加的
+echo "--------- 执行 commit-msg 校验 ---------"
+
+npx --no-install commitlint --edit $1
