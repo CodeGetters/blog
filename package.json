@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "cz": "git cz",
-    "dev:docs":"pnpm -C ./doc docs:dev",
+    "dev:docs": "pnpm -C ./doc docs:dev",
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx",
     "format": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
@@ -34,6 +34,7 @@
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
+    "@types/node": "^20.8.9",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "@vitejs/plugin-vue": "^4.4.0",
