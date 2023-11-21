@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vitepress": "1.0.0-rc.24"
+    "vitepress": "1.0.0-rc.29"
   }
 }
