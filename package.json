@@ -8,9 +8,7 @@
   "scripts": {
     "cz": "git cz",
     "dev:docs": "pnpm -C ./packages/doc docs:dev --open",
-    "vue_module:dev": "pnpm -C ./packages/components/vue_module dev --open",
-    "react_module:dev": "pnpm -C ./packages/components/react_module dev --open",
-    "playground:dev":"pnpm -C ./packages/playground dev --open",
+    "play:dev":"pnpm -C ./packages/play dev --open",
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx",
     "format": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
