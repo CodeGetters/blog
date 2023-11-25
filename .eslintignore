@@ -1,2 +1,5 @@
 doc/root/.vitepress/cache
 doc/root/.vitepress/dist
+
+dist
+shims-vue.d.ts
