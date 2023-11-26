@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from "./components/HelloWorld.vue";
+import { AffTest } from "@blog/element-plus";
 </script>
 
 <template>
@@ -11,7 +12,9 @@ import HelloWorld from "./components/HelloWorld.vue";
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <AFTest />
   <HelloWorld msg="Vite + Vue" />
+  <AffTest />
 </template>
 
 <style scoped>

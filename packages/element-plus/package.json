@@ -8,6 +8,20 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
+  "files": [
+    "lib/*",
+    "README.md",
+    "package.json"
+  ],
+  "main": "./lib/element.umd.js",
+  "module": "./lib/element.es.js",
+  "exports":{
+    "./lib/style.css":"./lib/style.css",
+    ".":{
+      "require":"./lib/element.umd.js",
+      "import":"./lib/element.es.js"
+    }
+  },
   "peerDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
     "unocss": "^0.57.7",
@@ -20,5 +34,8 @@
   },
   "dependencies": {
     "element-plus": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=20.0"
   }
 }

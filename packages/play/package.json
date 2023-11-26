@@ -16,6 +16,7 @@
     "vue": "^3.3.8"
   },
   "dependencies": {
+    "@blog/element-plus": "workspace:^",
     "socket.io-client": "^4.7.2",
     "webrtc-adapter": "^8.2.3"
   },

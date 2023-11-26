@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import OneToOne from "./OneToOne.vue";
 defineProps<{ msg: string }>();
 
 const count = ref(0);

@@ -6,5 +6,8 @@ defineOptions({
 </script>
 
 <template>
-  <div>测试组件</div>
+  <div>
+    <el-button type="primary">Default</el-button>
+    <div class="text-red">测试</div>
+  </div>
 </template>

@@ -8,5 +8,6 @@ export {}
 declare module "vue" {
   export interface GlobalComponents {
     AffTest: (typeof import("./src/components/Test/src/AffTest.vue"))["default"];
+    ElButton: (typeof import("element-plus/es"))["ElButton"];
   }
 }
