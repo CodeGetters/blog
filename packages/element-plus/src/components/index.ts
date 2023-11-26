@@ -1,17 +1,24 @@
 import "virtual:uno.css";
-
-// export * from "./Test";
+import type { App } from "vue";
 import AffTest from "./Test";
+
+export * from "./Test";
 
 export { AffTest };
 
 const components = [AffTest];
-const install = (App: any) => {
-  components.forEach((item) => {
-    App.component(item.__name, item);
+
+export function install(app: App) {
+  components.forEach((item: any) => {
+    if (item.install!) {
+      app.use(item);
+    } else if (item.__name) {
+      app.component(item.__name as string, item);
+    }
   });
-};
+}
 
 export default {
   install,
+  components,
 };

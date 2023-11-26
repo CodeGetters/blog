@@ -4,3 +4,4 @@ doc/root/.vitepress/dist
 dist
 shims-vue.d.ts
 lib
+es
