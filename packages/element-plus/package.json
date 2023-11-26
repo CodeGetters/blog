@@ -4,35 +4,52 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "build": "gulp --require @esbuild-kit/cjs-loader -f scripts/build/index.ts"
   },
   "files": [
+    "dist/*",
+    "es/*",
     "lib/*",
     "README.md",
     "package.json"
   ],
-  "main": "./lib/element.umd.js",
-  "module": "./lib/element.es.js",
-  "exports":{
-    "./lib/style.css":"./lib/style.css",
-    ".":{
-      "require":"./lib/element.umd.js",
-      "import":"./lib/element.es.js"
-    }
-  },
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "unpkg": "dist/index.min.js",
+  "jsdelivr": "dist/index.min.js",
   "peerDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
     "unocss": "^0.57.7",
     "vite-plugin-compression": "^0.5.1",
-    "vue": "^3.3.8"
+    "vue": "3.2.47"
   },
   "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/gulp": "^4.0.17",
+    "@types/gulp-autoprefixer": "^0.0.37",
+    "@types/gulp-clean-css": "^4.3.4",
+    "@types/gulp-sass": "^5.0.4",
+    "@vue-macros/volar": "^0.17.4",
+    "components-helper": "^2.1.5",
+    "esbuild": "^0.19.7",
+    "execa": "^8.0.1",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "rollup": "^4.5.2",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "sass": "^1.69.5",
     "unplugin-auto-import": "^0.17.1",
-    "unplugin-vue-components": "^0.25.2"
+    "unplugin-vue-components": "^0.25.2",
+    "vue-tsc": "^1.8.22"
   },
   "dependencies": {
+    "@vue/runtime-core": "^3.3.9",
     "element-plus": "^2.4.2"
   },
   "engines": {
