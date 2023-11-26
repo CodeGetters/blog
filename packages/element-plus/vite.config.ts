@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
-import viteCompression from "vite-plugin-compression";
+// import viteCompression from "vite-plugin-compression";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 export default ({ mode }) => {
@@ -17,27 +17,20 @@ export default ({ mode }) => {
       },
     },
     build: {
+      outDir: "lib",
       rollupOptions: {
         external: ["element-plus", "vue"],
-        // output: {
-        //   entryFileNames: "assets/js/[name].js",
-        //   chunkFileNames: "assets/js/[name]-[hash].js",
-        //   assetFileNames: "assets/[ext]/[name]-[hash]-.[ext]",
-        //   manualChunks(id) {
-        //     if (id.includes("node_modules")) {
-        //       return id
-        //         .toString()
-        //         .split("node_modules/")[1]
-        //         .split("/")[0]
-        //         .toString();
-        //     }
-        //   },
-        // },
+        output: {
+          globals: {
+            // 在 UMD 构建模式下为这些外部的依赖提供一个全局变量
+            vue: "Vue",
+          },
+        },
       },
       lib: {
         name: "selfComponents",
         entry: resolve(__dirname, "./src/components/index.ts"),
-        fileName: (format: string) => `self-component.${format}.js`,
+        fileName: (format: string) => `element.${format}.js`,
         formats: ["es", "cjs", "umd", "iife"],
       },
     },
@@ -50,7 +43,7 @@ export default ({ mode }) => {
       Components({
         resolvers: [ElementPlusResolver()],
       }),
-      viteCompression(),
+      // viteCompression(),
     ],
   });
 };

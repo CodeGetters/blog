@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { AFTest } from "./components";
+// import { AFTest } from "./components";
+import { AffTest } from "./components";
 </script>
 
 <template>
   <div class="text-red">
     hello world
-    <AFTest />
+    <AffTest />
   </div>
 </template>
